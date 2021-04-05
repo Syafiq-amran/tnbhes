@@ -1,0 +1,16 @@
+#header {
+    background-color: #313537;
+    color: #ffc;
+}
+
+#content-related .module{
+    display:none;
+}
+
+.field-is_superuser{
+    display:none;
+}
+
+.object-tools{
+    display: none;
+}

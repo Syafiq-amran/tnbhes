@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">TRANSFER LOGS</h6>
+    </div>
+    <div class="card-body">
+      <div class="">
+        <form method='Get'>
+          {% csrf_token %}
+          <!-- <div class="form-group row">
+                      <label class="col-form-label">File Path Name: </label>
+                      <div class="col-sm-2">
+                        {{myFilter.form.filepathname}}
+                      </div> -->
+
+          <div class="form-group row d-flex justify-content-start w-100">
+            <!-- <label class="col-form-label">Event Name: </label> -->
+            <div class="col-xl-2 w-100">
+              <input class="w-100" type="text" placeholder="Event Name..." name="eventname">
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="Transfer Duration..." name="transfduration">
+              <!--{{myFilter.form.transfduration}} -->
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="From Host..." name="fromhost">
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="To Host..." name="tohost">
+            </div>
+            <div class="col-xl-2">
+              <input class="w-100" type="text" placeholder="File Path Name..." name="filepathname">
+            </div>
+            <div class="col-xl-2">
+              <input class="w-100" type="text" placeholder="Description..." name="description">
+            </div>
+          </div>
+          <div class="form-group row d-flex justify-content-start">
+            <label class="col-form-label pl-4">START DATE :</label>
+            <div class="col-sm-2">
+              <input class="w-100" type="datetime-local" name="startdate" style="width:auto;"> {{myFilter.startdate}}
+              <!-- {{myFilter.form.startdate}} -->
+            </div>
+            <label class="col-form-label">END DATE :</label>
+            <div class="col-sm-2">
+              <input class="w-100" type="datetime-local" name="enddate" style="width:auto;"> {{myFilter.enddate}}
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary w-100" value="save"><i class="fas fa-filter"></i>CLICK TO FILTER</button>
+            </div>
+            <div class="text-center pl-4">
+              <button class="btn btn-warning w-100" value="save">RESET</button>
+            </div>
+          </div>
+
+
+        </form>
+        <div class="table-responsive">
+          <table id="transferlog" class="table table-bordered table-striped" width="100%">
+            <thead>
+              <tr>
+                <th>EVENT DATE TIME</th>
+                <th>EVENT NAME</th>
+                <th>TRANSFER DURATION</th>
+                <th>FROM DEVICE</th>
+                <th>TO SERVER</th>
+                <th>FILE PATH NAME</th>
+                <th>DESCRIPTION</th>
+                <!-- <th>Comments</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in table %}
+              <tr>
+                <td>{{p.eventdatetime | date:"Y-m-d H:i:s"}}</td>
+                <td>{{p.eventname}}</td>
+                <td>{{p.transfduration}}</td>
+                <td>{{p.fromhost}}</td>
+                <td>{{p.tohost}}</td>
+                <td>{{p.filepathname}}</td>
+                <td>{{p.description|truncatechars:32}}</td>
+                <!-- <td>{{p.comments}}</td> -->
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+{% endblock %}

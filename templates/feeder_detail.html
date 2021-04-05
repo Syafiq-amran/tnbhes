@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Feeder Pillar List</h6>
+    </div>
+    <div class="card-body">
+      <div class="">
+        <form method='Get'>
+          {% csrf_token %}
+          <!-- <div class="form-group row">
+                      <label class="col-form-label">File Path Name: </label>
+                      <div class="col-sm-2">
+                        {{myFilter.form.filepathname}}
+                      </div> -->
+
+          <div class="form-group row d-flex justify-content-start w-100">
+            <!-- <label class="col-form-label">Event Name: </label> -->
+            <div class="col-xl-2 w-100">
+              <input class="w-100" type="text" placeholder="Status..." name="fpstatus">
+            </div>
+            <div class="col-xl-2">
+              <input class="w-100" type="text" placeholder="Location..." name="fplocation">
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="Serial Number..." name="fpsn">
+              <!--{{myFilter.form.transfduration}} -->
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="IP Address..." name="fpipaddr">
+            </div>
+            <div class="col-sm-2">
+              <input class="w-100" type="text" placeholder="Rating..." name="fprating">
+            </div>
+            <div class="text-center float-right">
+                <button class="btn btn-primary w-100" value="save">CLICK TO FILTER</button>
+              </div>
+              <div class="text-center float-right pl-4">
+                <button class="btn btn-warning w-100" value="save">RESET</button>
+              </div>
+
+          </div>
+          <div class="form-group row d-flex justify-content-start">
+            <!-- <label class="col-form-label pl-4">START DATE :</label> -->
+            <div class="col-sm-2">
+              <!-- <input class="w-100" type="datetime-local" name="startdate" style="width:auto;"> {{myFilter.startdate}} -->
+              <!-- {{myFilter.form.startdate}} -->
+            </div>
+            <!-- <label class="col-form-label">END DATE :</label> -->
+            <div class="col-sm-2">
+              <!-- <input class="w-100" type="datetime-local" name="enddate" style="width:auto;"> {{myFilter.enddate}} -->
+            </div>
+            <!-- <div class="text-center float-right">
+              <button class="btn btn-primary w-100" value="save">CLICK TO FILTER</button>
+            </div> -->
+          </div>
+
+
+        </form>
+        <div class="table-responsive">
+          <table id="fplist" class="table table-bordered table-striped" width="100%">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Location</th>
+                <th>Serial Number</th>
+                <th>IP Address</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for summary in fpsummary  %}
+                <tr>
+                    <td>{{summary.fpstatus}}</td>
+                    <td>{{summary.fplocation}}</td>
+                    <td><a href="/FeederPillar/<pk>" style="text-decoration: none;">{{summary.fpsn}}</a></td>
+                    <td>{{summary.fpipaddr}}</td>
+                    <td>{{summary.fprating}}</td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+<script>
+//     $(document).ready(function () {
+//   $('#feedertable').DataTable({
+//       "order": [[2, "asc"]],
+//       dom: "<'row'<'col-sm-4 pt-2'l><'col-sm-4 pt-2'><'col-sm-4'f>>"
+//           + "<'row'<'col-sm-4 pt-2'><'col-sm-6 pt-2'><'col-sm-2 pt-2 pl-4'B>>"
+//           + "<'row'<'col-sm-12 pt-2'tr>>"
+//           + "<'row'<'col-sm-6 pt-2'i><'col-sm-6 color-blue pt-3'p>>",
+
+//       // stateSave: true,
+//       buttons: [
+//           {
+//               extend: 'colvis',
+//               postfixButtons: ['colvisRestore'],
+//               sButtonClass: "text-right"
+//           }
+//       ],
+//       paging: true,
+//       // "columnDefs": [
+//       //     { "width": "8em", "targets": 0 },
+//       //     { "width": "8em", "targets": 5 },
+//       //     { "width": "2em", "targets": 7 }
+//       // ],
+
+//       language: {
+//           sLengthMenu: "SHOW _MENU_",
+//           searchPlaceholder: "Search",
+//           search: "",
+//       }
+
+
+//   });
+// });
+</script>
+{% endblock %}

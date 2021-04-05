@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Transfer Logs</h6>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+          <table id="table" class="table table-bordered table-striped" width="100%">
+            <thead>
+              <tr>
+                <th>Serial Number</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Coordinate</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Capacity</th>
+                <th>Incoming CT</th>
+                <th>Outgoing CT</th>
+                <th>IP Address</th>
+                <th>MAC Address</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in view %}
+              <tr>
+                <td>{{p.sn}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.desc}}</td>
+                <td>{{p.location}}</td>
+                <td>{{p.coordinate}}</td>
+                <td>{{p.longitude}}</td>
+                <td>{{p.latitude}}</td>
+                <td>{{p.capacity}}</td>
+                <td>{{p.incomingct}}</td>
+                <td>{{p.outgoingct}}</td>
+                <td>{{p.ipaddr}}</td>
+                <td>{{p.macaddr}}</td>
+                <td>{{p.comments}}</td>
+                <!-- <td>{{p.comments}}</td> -->
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+{% endblock %}

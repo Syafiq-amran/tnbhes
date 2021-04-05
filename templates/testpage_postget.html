@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Transfer Logs</h6>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive px-3 py-3">
+            <table>
+                <!-- <tr>
+                    <td>id</td>
+                    <td><input type="number" id="txtid"></td>
+                </tr>
+                <tr>
+                    <td>event date time</td>
+                    <td><input type="datetime-local" id="txtdatetime"></td>
+                </tr> -->
+                <tr>
+                    <td>event name</td>
+                    <td><input type="text" placeholder="event name" id="txtname"></td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td><input type="text" placeholder="description" id="txtdesc"></td>
+                </tr>
+                <!-- <tr>
+                    <td>file path name</td>
+                    <td><input type="text" placeholder="file path name" id="txtpath"></td>
+                </tr> -->
+                <tr>
+                    <td>Transfer duration</td>
+                    <td><input type="number" placeholder="transfer duration" id="txtduration"></td>
+                </tr>
+                <tr>
+                    <td>From host</td>
+                    <td><input type="text" placeholder="from host" id="txtfrom"></td>
+                </tr>
+                <tr>
+                    <td>to host</td>
+                    <td><input type="text" placeholder="to host" id="txtto"></td>
+                </tr>
+                <tr>
+                    <td>comments</td>
+                    <td><input type="text" placeholder="comments" id="txtcomment"></td>
+                </tr>
+                <tr colspan="2">
+                    <td></td>
+                    <td><input type="button" id="addButton" value="add" class="btn btn-primary"></td>
+                </tr>
+            </table>
+                <table id="postget" class="table table-bordered table-striped" width="100%"
+                    cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th >id</th>
+                            <th >event date time</th>
+                            <th >event name</th>
+                            <th>description</th>
+                            <!-- <th >file path name</th> -->
+                            <th >Transfer Duration</th>
+                            <th >From Host</th>
+                            <th >To Host</th>
+                            <th >comments</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- /.container-fluid -->
+<script>
+//     $(document).ready(function(){ 
+//   $("#postget").dataTable();
+// })
+</script>
+{% endblock %}

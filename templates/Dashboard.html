@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<style>
+    hr{
+        margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 5px solid rgb(101, 224, 101);
+    }
+
+    .offline{
+        margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 5px solid rgb(238, 88, 18);
+    }
+</style>
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">OVERVIEW</h6>
+      </div>
+    <div class="card-body">
+        <div class="row pb-5">
+            <div class="col-sm-6">
+              <div class="card" style="height:100%">
+                <div class="card-header py-3 mb-4 text-center">
+                    <h4 class="m-0 font-weight-bold text-dark">DEVICES</h4>
+                  </div>
+                <div class="card-body">
+                  <p class="h4">Total Meter: 1</p>
+                  <div>
+                    <hr/>
+                    <button style="border: none;"><a href="/feeder_detail/" style="text-decoration: none; color:black;" title="click to show online device">1</a></button>
+                  </div>
+                  <div class="pt-5">
+                  <hr class="offline"/>
+                  <button style="border: none;"><a href="/feeder_detail/" style="text-decoration: none; color:black;" title="click to show offline device">0</a></button>
+                  </div>
+
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card " >
+                <div class="card-header py-3 mb-4 text-center">
+                    <h4 class="m-0 font-weight-bold text-dark">INSTALLED BASE</h4>
+                  </div>
+                <div class="card-body">
+                  <!-- <h4 class="card-title">Installed Base</h4> -->
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                  <div class="container" >
+                    <div class="col-md-6">
+                            <img src="{% static 'img/map.jpg'%}" alt="Lights" style="width:100%">
+                      </div>
+                    <!-- <img class="img-responsive" src="{% static 'img/map.jpg' %}"> -->
+                    <p class="h5 text-left">Central: 1</p>
+                    <p class="h5 text-left">East: 0</p>
+                    <p class="h5 text-left">North: 0</p>
+                    <p class="h5 text-left">South: 0</p>
+
+                  </div>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" style="height: 300px;">
+                <div class="card-header py-3 mb-4 text-center">
+                    <h4 class="m-0 font-weight-bold text-dark">Future</h4>
+                  </div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title text-center">Future</h5> -->
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card" style="height: 300px;">
+                <div class="card-header text-center">
+                    <h4 class="m-0 font-weight-bold text-dark">Future</h4>
+                  </div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title text-center">Future</h5> -->
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+{% endblock %}

@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TNB System Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-md-6">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row justify-content-center">
+                            <!-- <div class="col-lg-6 d-none d-lg-block text-center pt-5">
+                            </div> -->
+                            <div class="col-xs-4">
+                                <div class="p-0">
+                                    <div class="border-bottom pt-2 pl-5 pb-2">
+                                        <img class="col-xl-10" src="{% static 'img/TNB_edit.png' %}" alt="tnb">
+                                    </div>
+                                    <div class="text-secondary pt-3 text-center">
+                                      <h3>Please Login to View</h3>
+                                    </div>
+                                    <div class="pt-3">
+                                      {% if form.errors %}
+                                        <p style="color:red; text-align: center;">Username and Password did not match. Please try again.</p>
+                                      {% endif %}
+                                    </div>
+                                    <form method="post" action="{% url 'login' %}">
+                                      {% csrf_token %}  
+                                      <div class="form-group pb-1 text-center ">
+                                        <span>{{ form.username.label_tag }}</span>
+                                        <span class="btn-block">{{ form.username }}</span>
+                                      </div>
+                                      <div class="form-group pb-3 text-center">
+                                        <span >{{ form.password.label_tag }}</span>
+                                        <span class="btn-block">{{ form.password }}</span>
+                                      </div>
+                                      <div class="text-center pl-4 pr-4 pt-3">
+                                        <input type="submit" value="login"  class="btn btn-primary" style="width:60%"/>
+                                        <input type="hidden" name="next" value="{{ next }}" />
+                                      </div> 
+                                    </form>
+                                    <hr>
+                                  </div>
+                                  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-3 pr-3">
+                      <p class="text-center text-secondary">Copyright © Tenaga Nasional Berhad (200866-W). 
+                        All Rights Reserved. This is TNB  information. Any modification, copying, reproduction, republication, 
+                        uploading, posting, transmission, or distribution, in any manner, of the said information on the website, 
+                        including text, graphics, code and/or software without permission in writing is prohibited.</p>
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+
+</body>
+
+</html>
+
+
+
+

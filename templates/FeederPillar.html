@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<style>
+    body{
+        background-color: #f8f9fc;
+    }
+</style>
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  
+  <div class='pb-3'>
+    <h2 class="biggertexts">FEEDER PILLAR DETAILS</h2>
+  </div>
+  <div class='col-md-10' style="margin-left:-12px">
+    <p class="h4 pb-3"><strong>Feeder Pillar S/N: FPLR 16 - 0111</strong></p>
+  </div>
+  <div class=''>
+    <p class="h4 pb-3"><strong>Device Actions</strong></p>
+  </div>
+  <div class="card shadow mb-5 col-md-9 ">
+    <!-- <div class="card-header py-3">
+      <h5 class="m-0 font-weight-bold text-primary">FEEDER PILLARS</h5>
+    </div> -->
+    <div class="card-body">
+      <div class="">
+          <div class="container">
+            <div class="col-md-4 h5" style="margin-left:-45px">
+                <p>Serial Number:</p>
+                <p>IP Adress</p>
+                <p>Rating</p>
+                <p>Voltage</p>
+                <p>Manufacturing MTH/YEAR</p>
+                <p>Contract Number</p>
+                <p>Warranty</p>
+                <p>Deliver MTH/YEAR</p>
+                <p>Model</p>
+                <p>Rated Inc. Current</p>
+                <p>Rated O/G Current</p>
+                <p>Withstand Current</p>
+                <p>PO No.</p>
+                <p>TNB CAT No,</p>
+                <p>Location</p>
+                <p>Coordinate</p>
+
+            </div>
+            <div class="col-md-4 h5">
+                <p>FPLR 16 - 0111</p>
+                <p>83.171.144.215</p>
+                <p>1600 AMPS</p>
+                <p>415V</p>
+                <p>APRIL/2020</p>
+                <p>TNB 826/2019</p>
+                <p>3 YEARS</p>
+                <p>MAY/2020</p>
+                <p>SSE</p>
+                <p>1 x 2000A</p>
+                <p>8 x 400A</p>
+                <p>31.5kA for 3 sec</p>
+                <p>41071728</p>
+                <p>11201193</p>
+                <p>JALAN BUNUS 2, KL</p>
+                <p>3.1529820, 101.6979996</p>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card shadow col-md-2 float-right mr-5" style="height:440px; width:100%;">
+    <!-- <div class="card-header py-3">
+      <h5 class="m-0 font-weight-bold text-primary">FEEDER PILLARS</h5>
+    </div> -->
+    <div class="card-body" >
+      <div class="">
+        
+        <div class="form-group row " >
+            <div class="col-md-12">
+                <button class="btn btn-primary col-md-12" value="filelist"><i class="fas fa-clipboard-list fa-lg float-left"></i>FILE LIST</button>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group row ">
+          <div class="col-md-12">
+            <button class="btn btn-primary col-md-12" value="upgrade"><i class="fas fa-download fa-lg float-left"></i>UPGRADE</button>
+          </div>
+          
+        </div>
+        <div class="form-group row ">
+          <div class="col-md-12 ">
+            <button class="btn btn-danger col-md-12" value="reboot" style="background-color: rgb(247, 121, 121);"><i class="fas fa-redo float-left fa-lg" ></i></i>REBOOT</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+{% endblock %}

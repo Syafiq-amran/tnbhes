@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <!-- <h1 class="h3 mb-2 text-gray-800">Faults Management</h1> -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h5 class="m-0 font-weight-bold text-primary">FEEDER PILLARS</h5>
+    </div>
+    <div class="card-body">
+      <div class="">
+        <form action="/test_update/{{ form.id.value }}" method="POST" class="post-form" name="myform">
+          {% csrf_token %}
+          <div class="container">
+            <br>
+            <div class='text-center pb-5'>
+              <h2 class="biggertexts">FEEDER PILLAR DETAILS</h2>
+            </div>
+            <img src="{% static 'cust/fp.png' %}" class="mx-auto d-block" style="height: 100px;"> 
+            <div class="form-group row pt-5">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">SERIAL NO. :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="sn" id="id_sn" value="{{form.sn.value}}" />
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">ABC :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="name" id="id_name" value="ABC" />
+
+              </div>
+              <!-- <label class="col-sm-1 col-form-label"></label>
+                <label class="col-sm-1 col-form-label">Name </label>
+                <div class="col-sm-2">
+                  <input readonly type="text" class="form-control" name="name" id="id_name" value="{{form.name.value}}" />
+    
+                </div> -->
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">LOCATION :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="location" id="id_location"
+                  value="{{form.location.value}}" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">DEF :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="macaddr" id="id_macaddr" value="DEF" />
+
+              </div>
+              <!-- <label class="col-sm-1 col-form-label"></label>
+                <label class="col-sm-1 col-form-label">MAC Address </label>
+                <div class="col-sm-2">
+                  <input readonly type="text" class="form-control" name="macaddr" id="id_macaddr"
+                    value="{{form.macaddr.value}}" />
+    
+                </div> -->
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">COORDINATE :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="coordinate" id="id_coordinate"
+                  value="{{form.coordinate.value}}" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right d-none">LONGITUDE :</label>
+              <div class="col-sm-2 d-none">
+                <input readonly type="text" class="form-control" name="longitude" id="id_longitude"
+                  value="{{form.longitude.value}}" />
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">CAPACITY :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="capacity" id="id_capacity"
+                  value="{{form.capacity.value}}" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right d-none">LATITUDE :</label>
+              <div class="col-sm-2 d-none">
+                <input readonly type="text" class="form-control" name="latitude" id="id_latitude"
+                  value="{{form.latitude.value}}" />
+
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">INCOMING CT :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="incomingct" id="id_incomingct"
+                  value="{{form.incomingct.value}}" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right d-none">IP ADDRESS :</label>
+              <div class="col-sm-2 d-none">
+                <input readonly type="text" class="form-control" name="ipaddr" id="id_ipaddr"
+                  value="{{form.ipaddr.value}}" />
+
+              </div>
+            </div>
+
+            <div class="form-group row pb-5">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">OUTGOING CT :</label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control" name="outgoingct" id="id_outgoingct"
+                  value="{{form.outgoingct.value}}" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right d-none">DESCRIPTION :</label>
+              <div class="col-sm-2 d-none">
+                <input readonly type="text" class="form-control" name="desc" id="id_desc" value="{{form.desc.value}}" />
+              </div>
+            </div>
+
+            <div class="form-group row" style="display:none">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right d-none">COMMENTS :</label>
+              <div class="col-sm-4 d-none">
+                <input type="text" class="form-control" name="comments" id="id_comments"
+                  value="{{form.comments.value}}" />
+
+              </div>
+            </div>
+
+            <div class="form-group row ">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right"></label>
+              <div class="col-sm-2">
+                <input readonly type="text" class="form-control d-none" name="" id="" value="" />
+
+              </div>
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">FILE LIST :</label>
+              <div class="col-sm-2">
+                <button class="btn btn-primary pull-right" value="filelist">FILE LIST</button>
+              </div>
+            </div>
+
+            <div class="form-group row pt-2">
+              <label class="col-sm-1 col-form-label"></label>
+              <div class="col-9">
+                <hr>
+              </div>
+            </div>
+
+              <div class='text-center pb-2'>
+                <h3>OPERATOR CONTROLS</h3>
+              </div>
+
+            <div class="form-group row ">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">REBOOT NETWORK DEVICE :</label>
+              <div class="col-sm-1">
+                <button class="btn btn-primary mr-5 w-100" value="ssreboot">REBOOT</button>
+              </div>
+            </div>
+
+            <div class="form-group row pb-5">
+              <label class="col-sm-1 col-form-label"></label>
+              <label class="col-sm-2 col-form-label text-right">UPGRADE NETWORK DEVICE :</label>
+              <div class="col-sm-1">
+                <button class="btn btn-primary mr-5 w-100" value="upgrade">UPGRADE</button>
+              </div>
+            </div>
+
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->
+{% endblock %}
